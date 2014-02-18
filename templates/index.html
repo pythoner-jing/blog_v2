@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block motto %}
+{{ motto.content }}
+{% endblock %}
+
+{% block tag %}
+{% for t in tags %}
+<a href="" class="tag">{{ t.tagname }}</a>
+{% endfor %}
+{% endblock %}
+
+{% block activity %}
+{% for a in activitys %}
+<div>{{ a.user }} {{ a.action }} <a href="">{{ a.distribute.title }}</a></div>
+{% endfor %}
+{% endblock %}
+
+{% block blog %}
+{% for d in distributes %}
+<div class="blog"><a href="">{{ d.title }}</a>
+{% for t in d.tags.all %}
+<span class="tag">{{ t.tagname }}</span>
+{% endfor %}
+<span class="date">{{ d.date|date:"Y-m-d" }}</span></div>
+{% endfor %}
+{% endblock %}

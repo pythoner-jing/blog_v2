@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="static/css/flat.css">
+		<link rel="stylesheet" href="static/css/index.css">
+		<script>
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="nav">
+				<ul>
+					<li class="link"><a href="">JING的实验室</a></li>
+					<li class="link"><a href="">GitHub</a></li>
+					<li class="link"><a href="">微博</a></li>
+					<li class="motto">{% block motto %}{% endblock %}</li>
+					<div class="clear both"></div>
+				</ul>
+			</div>
+			<div class="content">
+				<table border="0">
+					<tr>
+						<td valign="top" width="25%" id="side">
+							<ul class="side">
+								<li><div class="tag panel">
+									<ul>
+										<li class="title">标签</li>
+										<li class="content">
+										{% block tag %}{% endblock %}
+										</li>
+									</ul>
+								</div></li>
+								<li><div class="activity panel">
+									<ul>
+										<li class="title">动态</li>
+										<li class="content">
+										{% block activity %}
+										{% endblock %}
+										</li>
+									</ul>
+								</div></li>
+								<li><div class="record panel">
+									<ul>
+										<li class="title">归档</li>
+										<li class="content">
+										<div><a href="">2014年1月</a></div>
+										<div><a href="">2014年2月</a></div>
+										<div><a href="">2014年3月</a></div>
+										</li>
+									</ul>
+								</div></li>
+							</ul>
+						</td>
+						<td valign="top" id="display">
+							<div class="panel">
+								<ul>
+									<li class="title">全部博文</li>
+									<li class="content">
+									{% block blog %}
+									{% endblock %}
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="footer">
+				<div>
+					<a id="login" href="">登录</a>
+					<p id="author">Blog(v2) 2014 By JING</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

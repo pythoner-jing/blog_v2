@@ -1,0 +1,207 @@
+body {
+}
+
+div.content {
+}
+li.link {
+	float : left;
+	display : block;
+	height : 50px;
+}
+
+li.motto {
+	float : right;
+	line-height : 50px;
+	margin-right : 150px;
+	color : #fff;
+	padding-right : 20px;
+	padding-left : 20px;
+}
+
+div.nav  ul {
+	margin-left : 150px;
+}
+
+div.nav a {
+	float : left;
+	display : block;
+	height : 50px;
+	line-height : 50px;
+	color : #fff;
+	padding-right : 20px;
+	padding-left : 20px;
+}
+
+div.nav a:hover {
+	background : #555;
+}
+
+div.footer {
+	margin-top : 20px;
+	text-align : center;
+}
+
+div.footer a {
+	color : #fff;
+}
+
+div.footer > div {
+	margin-top : 20px;
+}
+
+div.content {
+	width : 1000px;				
+	height : auto;				
+	border : 1px solid #fff;
+	margin : 60px auto auto auto;
+	padding : 10px;
+}
+
+table {
+	width : 100%;
+	height : auto;
+}
+
+div.test {
+	width : 100%;
+	height : 100px;
+	border : 1px #ccc solid;
+	padding : 0px;
+	margin-bottom : 10px;
+}
+
+ul.side > li {
+	display : block;
+}
+
+ul.side  li.title {
+	background : #fff;
+	padding : 5px;
+	font-size : 15px;
+	color : #111;
+	border-bottom : 1px #ccc solid;
+}
+
+td#display li.title {
+	font-size : 15px;
+	background : #fff;
+	padding : 5px;
+	border-bottom : 1px #ccc solid;
+}
+
+ul.side li.content {
+	padding : 5px;
+	font-size : 13px;
+}
+
+ul.side .panel {
+	padding : 0px;
+	margin-bottom : 10px;
+}
+
+div.tag.panel li.content {
+	padding : 3px;
+	line-height : 25px;
+}
+
+td#display > div.panel {
+	width : 90%;
+	height : auto;	
+	margin-left : auto;
+	margin-right : auto;
+	border : 1px #fff solid;
+}
+
+td#display div.blog {
+	border-bottom : 1px dotted #ccc;
+	padding : 5px;
+}
+
+td#display li.content {
+	padding : 10px;
+	padding-top : 10px;
+	font-size : 13px;
+	color : #333;
+	line-height : 18px; 
+}
+
+td#display li.content img {
+	max-width : 500px;
+	max-height : 500px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+td#display li.title span.count{
+	float : right;
+	font-size : 13px;
+	line-height : 25px;
+	color : #666;
+}
+
+td#display li.title span.tag{
+	margin-left : 2px;	
+}
+
+td#display li.content div.img {
+	margin : auto
+}
+
+td#display li.content span.date {
+	float : right;
+	color : #666;
+}
+
+td#display li.content span.tag {
+	margin : auto 3px auto 3px;
+}
+
+td#display li.editbox {
+	text-align : center;
+	width : 100%;
+	border : 1px #666 solid;
+	padding : 10px;
+}
+
+td#display li.editbox div.prompt {
+	margin : auto;
+	width : 99%;
+	text-align : left;
+	font-size : 15px;
+	border-bottom : 1px #ccc solid;
+	padding-bottom : 3px;
+}
+.panel {
+	border-width : 0px;
+}
+
+textarea {
+	width : 98%;
+	margin : auto;
+	font-size : 14px;
+	border : 1px #666 solid;
+}
+
+input[type=checkbox], .checkbox {
+	float : left;
+	font-size : 13px;
+	line-height : 20px;
+}
+
+span.checkbox {
+	margin : 5px;
+}
+
+span#shortcut {
+	float : left;
+	margin : 3px;
+	margin-top : 5px;
+	margin-bottom : 0px;
+}
+
+span#submit {
+	float : right;
+	margin : 3px;
+	margin-top : 5px;
+	margin-bottom : 0px;
+}
