@@ -18,4 +18,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r"^$", index),
+    url(r"^read/([^/]+)/$", read),
+    url(r"^edit/([^/]+)/$", edit),
+    url(r"^delete/([^/]+)/$", delete),
+    url(r"^tag/([^/]+)/$", tag),
+    url(r"^record/\d+/\d+/$", record),
+    url(r"^distribute/$", distribute),
+    url(r"^login/$", login),
+    url(r"^logout/$", logout),
 )

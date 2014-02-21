@@ -1,82 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="flat.css">
-		<link rel="stylesheet" href="distribute.css">
-	</head>
-	<body>
-		<div id="wrapper">
-			<div class="nav">
-				<ul>
-					<li class="link"><a href="">JING的实验室</a></li>
-					<li class="link"><a href="">GitHub</a></li>
-					<li class="link"><a href="">微博</a></li>
-					<li class="motto">代码即魔法</li>
-					<div class="clear both"></div>
-				</ul>
-			</div>
-			<div class="content">
-				<table border="0">
-					<tr>
-						<td valign="top" width="25%" id="side">
-							<ul class="side">
-								<li><div class="tag panel">
-									<ul>
-										<li class="title">标签</li>
-										<li class="content">
-										<a href="" class="tag">标准库</a>
-										<a href="" class="tag">Django</a>
-										<a href="" class="tag">算法</a>
-										<a href="" class="tag">网络协议</a>
-										<a href="" class="tag">linux</a>
-										<a href="" class="tag">汇编</a>
-										<a href="" class="tag">计算机组成原理</a>
-										</li>
-									</ul>
-								</div></li>
-								<li><div class="activity panel">
-									<ul>
-										<li class="title">动态</li>
-										<li class="content">
-										<div>JING 评论 <a href="">A星算法</a></div>
-										<div>发布 <a href="">A星算法</a></div>
-										<div>删除 <a href="">A星算法</a></div>
-										</li>
-									</ul>
-								</div></li>
-								<li><div class="record panel">
-									<ul>
-										<li class="title">归档</li>
-										<li class="content">
-										<div><a href="">2014年1月</a></div>
-										<div><a href="">2014年2月</a></div>
-										<div><a href="">2014年3月</a></div>
-										</li>
-									</ul>
-								</div></li>
-							</ul>
-						</td>
-						<td valign="top" id="display">
-							<div class="panel">
-								<div class="editbox">
-									<input type="text" class="text default" maxlength="15" value="标题">
-									<span><button class="btn primary">发布</button></span>
-									<span><button class="btn default">取消</button></span>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="footer">
-				<div>
-					<a id="login" href="">登录</a>
-					<p id="author">Blog(v2) 2014 By JING</p>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script type="text/javascript" src="flat.js"></script>
-</html>
+{% extends "index.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/distribute.css">
+{% endblock %}
+
+{% block display %}
+<form action="" method="post">
+	{% csrf_token %}
+	<div class="editbox">
+		<input type="text" class="text default" maxlength="15" value="标题" name="title">
+		<span><button type="submit" class="btn primary">发布</button></span>
+		<span><a href="/" class="btn default">取消</a></span>
+	</div>
+</form>
+{% endblock %}

@@ -7,8 +7,7 @@ a {
 }
 
 body {
-	overflow-x : hidden;
-	font-family : "verdana", "宋体", "arial", "sans-serif";
+	font-family : "sans-serif", "宋体", "arial", "verdana";
 	padding : 0px;
 	margin : 0px;
 	height : 100%;
@@ -135,7 +134,7 @@ body {
 	background-color : #666666;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
 	border : solid 1px #ccc;
 	padding : 3px;
 	color : #666;

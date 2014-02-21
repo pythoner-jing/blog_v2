@@ -128,3 +128,17 @@ td#display li.content span.tag {
 .panel {
 	border-width : 0px;
 }
+
+div.blog .admin a {
+	color : red;
+	font-size : 14px;
+}
+
+div.footer {
+	font-size : 14px;
+	color : white;
+}
+
+div.footer p {
+	color : #333;	
+}

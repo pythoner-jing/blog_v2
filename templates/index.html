@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
 {% block motto %}
 {{ motto.content }}
 {% endblock %}
 
 {% block tag %}
 {% for t in tags %}
-<a href="" class="tag">{{ t.tagname }}</a>
+<a href="{{ t.url }}" class="tag">{{ t.tagname }}</a>
 {% endfor %}
 {% endblock %}
 
@@ -16,12 +20,20 @@
 {% endfor %}
 {% endblock %}
 
-{% block blog %}
-{% for d in distributes %}
-<div class="blog"><a href="">{{ d.title }}</a>
-{% for t in d.tags.all %}
-<span class="tag">{{ t.tagname }}</span>
-{% endfor %}
-<span class="date">{{ d.date|date:"Y-m-d" }}</span></div>
-{% endfor %}
+{% block display %}
+<ul>
+	<li class="title">全部博文</li>
+	<li class="content">
+	{% for d in distributes %}
+	<div class="blog"><a href="{{ d.read }}">{{ d.title }}</a>
+		{% for t in d.tags.all %}
+		<span class="tag">{{ t.tagname }}</span>
+		{% endfor %}
+		{% if user.is_authenticated %}
+		<span class="admin"><a href="{{ d.edit }}">编辑</a> | <a href="{{ d.delete }}">删除</a></span>
+		{% endif %}
+		<span class="date">{{ d.date|date:"Y-m-d" }}</span></div>
+	{% endfor %}
+	</li>
+</ul>
 {% endblock %}

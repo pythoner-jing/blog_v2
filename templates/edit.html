@@ -1,120 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="flat.css">
-		<link rel="stylesheet" href="edit.css">
-	</head>
-	<body>
-		<div id="wrapper">
-			<div class="nav">
-				<ul>
-					<li class="link"><a href="">JING的实验室</a></li>
-					<li class="link"><a href="">GitHub</a></li>
-					<li class="link"><a href="">微博</a></li>
-					<li class="motto">代码即魔法</li>
-					<div class="clear both"></div>
-				</ul>
-			</div>
-			<div class="content">
-				<table border="0">
-					<tr>
-						<td valign="top" width="25%" id="side">
-							<ul class="side">
-								<li><div class="tag panel">
-									<ul>
-										<li class="title">标签</li>
-										<li class="content">
-										<a href="" class="tag">标准库</a>
-										<a href="" class="tag">Django</a>
-										<a href="" class="tag">算法</a>
-										<a href="" class="tag">网络协议</a>
-										<a href="" class="tag">linux</a>
-										<a href="" class="tag">汇编</a>
-										<a href="" class="tag">计算机组成原理</a>
-										</li>
-									</ul>
-								</div></li>
-								<li><div class="activity panel">
-									<ul>
-										<li class="title">动态</li>
-										<li class="content">
-										<div>JING 评论 <a href="">A星算法</a></div>
-										<div>发布 <a href="">A星算法</a></div>
-										<div>删除 <a href="">A星算法</a></div>
-										</li>
-									</ul>
-								</div></li>
-								<li><div class="record panel">
-									<ul>
-										<li class="title">归档</li>
-										<li class="content">
-										<div><a href="">2014年1月</a></div>
-										<div><a href="">2014年2月</a></div>
-										<div><a href="">2014年3月</a></div>
-										</li>
-									</ul>
-								</div></li>
-							</ul>
-						</td>
-						<td valign="top" id="display">
-							<div class="panel">
-								<ul>
-									<li class="title">Python蟒蛇<span class="tag">杂记</span><span class="tag">杂记</span><span class="tag">杂记</span><span class="count">100 人浏览 | 发表于 2014-1-1</span></li>
-									<li class="content">
-									Python（英国发音：/ˈpaɪθən/ 美国发音：/ˈpaɪθɑːn/），是一种面向对象、直译式计算机编程语言，具有近二十年的发展历史，成熟且稳定。它包含了一组完善而且容易理解的标准库，能够轻松完成很多常见的任务。它的语法简捷和清晰，尽量使用无异义的英语单词，与其它大多数程序设计语言使用大括号不一样，它使用縮进来定义语句块。
-									与Scheme、Ruby、Perl、Tcl等动态语言一样，Python具备垃圾回收功能，能够自动管理内存使用。它经常被当作脚本语言用于处理系统管理任务和网络程序编写，然而它也非常适合完成各种高级任务。Python虚拟机本身几乎可以在所有的作业系统中运行。使用一些诸如py2exe、PyPy、PyInstaller之类的工具可以将Python源代码转换成可以脱离Python解释器运行的程序。
-									Python的官方解释器是CPython，该解释器用C语言编写，是一个由社区驱动的自由软件，目前由Python软件基金会管理。
-									Python支持命令式程序设计、面向对象程序设计、函数式编程、面向侧面程序设计、泛型编程多种编程范式。
-									<div class="img"><img src="a.jpg" alt="a.jpg"></div>
-									</li>
-									<li class="editbox">
-									<div class="editbox">
-										<div class="prompt">标签</div>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<span class="checkbox"><input type="checkbox" value="标准库" name="tag" checked="true">标准库</span>
-										<textarea id="editbox" class="textarea default" rows="10" cols=""></textarea>
-										<span id="shortcut">
-											<span class="img"><button class="btn success" onclick="add_img()">图片</button></span>
-											<span class="url"><button class="btn info" onclick="add_url()">链接</button></span>
-											<span class="em"><button class="btn danger" onclick="add_em()">强调</button></span>
-											<span class="strong"><button class="btn silent" onclick="add_strong()">加粗</button></span>
-										</span>
-										<span id="submit">
-											<span class="select">
-												<select id="" name="code">
-													<option value="Python">Python</option>
-													<option value="Javascript">Javascript</option>
-													<option value="C/C++">C/C++</option>
-													<option value="Java">Java</option>
-												</select>
-											</span>
-											<span class="code"><button class="btn warning">代码</button></span>
-											<span class="text"><button class="btn primary">发布</button></span>
-										</span>
-										<div class="clear both"></div>
-									</div>
-									</li>
-								</ul>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="footer">
-				<div>
-					<a id="login" href="">登录</a>
-					<p id="author">Blog(v2) 2014 By JING</p>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script type="text/javascript" src="flat.js"></script>
-	<script type="text/javascript" src="edit.js"></script>
-</html>
+{% extends "index.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/kindeditor/plugins/code/prettify.css">
+<link rel="stylesheet" href="/static/css/flat.css">
+<link rel="stylesheet" href="/static/css/edit.css">
+{% endblock %}
+
+{% block display %}
+<ul>
+	<li class="title">{{ distribute.title }}
+	{% for t in distribute.tags.all %}
+	<span class="tag">{{ t.tagname }}</span>
+	{% endfor %}
+	<span class="count">{{ distribute.counter }} 人浏览 | 发表于 {{ distribute.date|date:"Y-m-d H:i:s"}}</span></li>
+	<li class="content" width="100%">
+	{% autoescape off %}
+	{{ distribute.content }}
+	{% endautoescape %}
+	</li>
+	<li class="editbox">
+	<div class="editbox">
+		<form action="" method="post">
+			{% csrf_token %}
+			<div class="prompt">标签</div>
+			{% for t in tags %}
+			{% if t.tagname in distribute.taglist %}
+			<span class="checkbox"><input type="checkbox" value="{{ t.tagname }}" name="tag" checked="true">{{ t.tagname }}</span>
+			{% else %}
+			<span class="checkbox"><input type="checkbox" value="{{ t.tagname }}" name="tag">{{ t.tagname }}</span>
+			{% endif %}
+			{% endfor %}
+			<textarea id="editbox" name="editbox">{{ distribute.content }}</textarea>
+			<span id="submit">
+				<span class="text"><button type="submit" class="btn primary">发布</button></span>
+			</span>
+			<div class="clear both"></div>
+		</form>
+	</div>
+	</li>
+</ul>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/static/js/edit.js"></script>
+<script src="/static/kindeditor/kindeditor-all.js" type="text/javascript" charset="utf-8"></script> 
+<script charset="utf-8" src="/static/kindeditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="/static/kindeditor/plugins/code/prettify.js"></script>
+<script>
+	KindEditor.ready(function (K) { 
+		window.EditorObject = K.create('#editbox', { 
+			width : "100%",
+			height : "300px",
+			items : 
+			[
+			'source', '|', 'undo', 'redo', '|', 'preview', "code", 'print', 'template', 'cut', 'copy', 'paste',
+			'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+			'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+			'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+			'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+			'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+			'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+			'anchor', 'link', 'unlink'
+			]
+		}); 
+		prettyPrint();
+	}); 
+</script>
+
+{% endblock %}

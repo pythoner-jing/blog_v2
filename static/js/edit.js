@@ -7,7 +7,7 @@ function add_tag(tag)
 
 function add_img()
 {
-	var tag = '<img src="" alt="">';
+	var tag = '<div class="img"><img src="" alt=""></div>';
 	add_tag(tag);
 }
 

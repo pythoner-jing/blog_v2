@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/error.css">
+{% endblock %}
+
+{% block display %}
+<div class="panel" id="error_panel">
+	{{ err_msg }}
+</div>
+{% endblock %}

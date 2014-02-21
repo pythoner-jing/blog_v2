@@ -3,8 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title></title>
-		<link rel="stylesheet" href="static/css/flat.css">
-		<link rel="stylesheet" href="static/css/index.css">
+		<link rel="stylesheet" href="/static/css/flat.css">
+		{% block css %}{% endblock %}
 		<script>
 		</script>
 	</head>
@@ -12,7 +12,7 @@
 		<div id="wrapper">
 			<div class="nav">
 				<ul>
-					<li class="link"><a href="">JING的实验室</a></li>
+					<li class="link"><a href="/">JING的实验室</a></li>
 					<li class="link"><a href="">GitHub</a></li>
 					<li class="link"><a href="">微博</a></li>
 					<li class="motto">{% block motto %}{% endblock %}</li>
@@ -45,9 +45,11 @@
 									<ul>
 										<li class="title">归档</li>
 										<li class="content">
-										<div><a href="">2014年1月</a></div>
+										<!--<div><a href="">2014年1月</a></div>
 										<div><a href="">2014年2月</a></div>
-										<div><a href="">2014年3月</a></div>
+										<div><a href="">2014年3月</a></div>-->
+										{% block record %}
+										{% endblock %}
 										</li>
 									</ul>
 								</div></li>
@@ -55,6 +57,7 @@
 						</td>
 						<td valign="top" id="display">
 							<div class="panel">
+								{% block display %}
 								<ul>
 									<li class="title">全部博文</li>
 									<li class="content">
@@ -62,6 +65,7 @@
 									{% endblock %}
 									</li>
 								</ul>
+								{% endblock %}
 							</div>
 						</td>
 					</tr>
@@ -69,10 +73,19 @@
 			</div>
 			<div class="footer">
 				<div>
-					<a id="login" href="">登录</a>
+					<span class="admin">
+						{% if not user.is_authenticated %}
+						<a id="login" href="/login/">登录</a>
+						{% else %}
+						<a id="distribute" href="/distribute/">发布</a> | <a id="logout" href="/logout/">退出</a>
+						{% endif %}
+					</span>
 					<p id="author">Blog(v2) 2014 By JING</p>
 				</div>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="/static/js/flat.js"></script>
+	{% block js %}
+	{% endblock %}
 </html>

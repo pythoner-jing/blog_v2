@@ -18,7 +18,6 @@ class Tag(models.Model):
 		ordering = ["id"]
 
 class Distribute(models.Model):
-	link = models.URLField(verbose_name = "链接")
 	title = models.CharField(max_length = 50, verbose_name = "标题")
 	tags = models.ManyToManyField(Tag, blank = True, verbose_name = "标签")
 	date = models.DateTimeField(auto_now_add = True, verbose_name = "发布时间") 
@@ -32,7 +31,7 @@ class Distribute(models.Model):
 		ordering = ["-id"]
 
 class Activity(models.Model):
-	user = models.ForeignKey(User, verbose_name = "用户名")
+	user = models.ForeignKey(User, verbose_name = "用户")
 	action = models.CharField(max_length = 10, verbose_name = "动作")
 	distribute = models.ForeignKey(Distribute, verbose_name = "博文")
 
@@ -40,10 +39,32 @@ class Activity(models.Model):
 		return "%s %s %s" % (self.user.username, self.action, self.distribute.title)
 
 	class Meta:
-		ordering = ["-id"];
+		ordering = ["-id"]
 
 class Motto(models.Model):
 	content = models.CharField(max_length = 30, verbose_name = "座右铭")
 
 	def __unicode__(self):
 		return self.content
+
+class Comment(models.Model):
+	user = models.ForeignKey(User, verbose_name = "用户") 
+	content = models.TextField(verbose_name = "评论")
+	ref = models.ForeignKey(Comment, blank = True, verbose_name = "引用")
+	date = models.DateTimeField(auto_now_add = True, verbose_name = "评论时间") 
+
+	def __unicode__(self):
+		return "%s %s" % (self.user.username, self.content)
+
+	class Meta:
+		ordering = ["-date"]
+
+class Record(models.Model):
+	year = models.PositiveIntegerField(verbose_name = "年份")
+	month = models.PositiveIntegerField(verbose_name = "月份")
+
+	def __unicode__(self):
+		return "%s年%s月" % (self.year, self.month)
+
+	class Meta:
+		ordering = [""] 

@@ -27,7 +27,6 @@ function input_text_focus(obj)
 		obj.value = "";	
 		obj.style.color = "#000";
 	}
-	console.log("call input_text_focus");
 }
 
 function input_text_blur(obj, value)
@@ -36,7 +35,6 @@ function input_text_blur(obj, value)
 		obj.value = obj.defaultValue;
 		obj.style.color = "#666";
 	}
-	console.log("call input_text_blur");
 }
 
 function evt_handler()

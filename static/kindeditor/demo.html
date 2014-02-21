@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	<body>
+		<textarea id="editor_id" name="content" style="width:700px;height:300px;">
+		</textarea>	
+	</body>
+	<script src="./kindeditor-all.js" type="text/javascript" charset="utf-8"></script> 
+	<script charset="utf-8" src="./lang/zh_CN.js"></script>
+	<script>
+		KindEditor.ready(function (K) { 
+			window.EditorObject = K.create('#editor_id', { 
+				items : 
+				[
+				'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy', 'paste',
+				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+				'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+				'anchor', 'link', 'unlink', '|', 'about'
+				]
+			}); 
+		}); 
+	</script>
+</html>

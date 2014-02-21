@@ -60,6 +60,7 @@ div.content {
 table {
 	width : 100%;
 	height : auto;
+	table-layout : fixed;
 }
 
 div.test {
@@ -105,7 +106,7 @@ div.tag.panel li.content {
 }
 
 td#display > div.panel {
-	width : 90%;
+	width : 98%;
 	height : auto;	
 	margin-left : auto;
 	margin-right : auto;
@@ -118,18 +119,15 @@ td#display div.blog {
 }
 
 td#display li.content {
-	padding : 10px;
 	padding-top : 10px;
 	font-size : 13px;
 	color : #333;
-	line-height : 18px; 
+	line-height : 18px;
+	width : 100%;
+	margin-bottom : 10px;
 }
 
 td#display li.content img {
-	max-width : 500px;
-	max-height : 500px;
-	margin-top : 10px;
-	margin-bottom : 10px;
 }
 
 td#display li.title span.count{
@@ -144,7 +142,7 @@ td#display li.title span.tag{
 }
 
 td#display li.content div.img {
-	margin : auto
+	margin : 0px; 
 }
 
 td#display li.content span.date {
@@ -158,7 +156,6 @@ td#display li.content span.tag {
 
 td#display li.editbox {
 	text-align : center;
-	width : 100%;
 	border : 1px #666 solid;
 	padding : 10px;
 }
@@ -204,4 +201,26 @@ span#submit {
 	margin : 3px;
 	margin-top : 5px;
 	margin-bottom : 0px;
+}
+
+pre.prettyprint {
+	word-break:break-word;
+	font-size : 13px;
+	display : block;
+	overflow : auto;
+	max-height : 400px;
+}
+
+div.blog .admin a {
+	color : red;
+	font-size : 14px;
+}
+
+div.footer {
+	font-size : 14px;
+	color : white;
+}
+
+div.footer p {
+	color : #333;	
 }

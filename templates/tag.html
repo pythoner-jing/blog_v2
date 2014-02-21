@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block motto %}
+{{ motto.content }}
+{% endblock %}
+
+{% block tag %}
+{% for t in tags %}
+<a href="{{ t.url }}" class="tag">{{ t.tagname }}</a>
+{% endfor %}
+{% endblock %}
+
+{% block activity %}
+{% for a in activitys %}
+<div>{{ a.user }} {{ a.action }} <a href="">{{ a.distribute.title }}</a></div>
+{% endfor %}
+{% endblock %}
+
+{% block display %}
+<ul>
+	<li class="title">{{ title }}</li>
+	<li class="content">
+	{% for d in distributes %}
+	<div class="blog"><a href="{{ d.blog_link }}">{{ d.title }}</a>
+		{% for t in d.tags.all %}
+		<span class="tag">{{ t.tagname }}</span>
+		{% endfor %}
+		{% if user.is_authenticated %}
+		<span class="admin"><a href="{{ d.edit_link }}">编辑</a> | <a href="{{ d.delete_link }}">删除</a></span>
+		{% endif %}
+		<span class="date">{{ d.date|date:"Y-m-d" }}</span></div>
+	{% endfor %}
+	</li>
+</ul>
+{% endblock %}
