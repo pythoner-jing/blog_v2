@@ -46,7 +46,7 @@ div.footer > div {
 
 div.content {
 	width : 1000px;				
-	height : auto;				
+	height : auto;
 	border : 1px solid #fff;
 	margin : 60px auto auto auto;
 	padding : 10px;
@@ -117,6 +117,8 @@ td#display li.content {
 	font-size : 13px;
 	color : #333;
 	line-height : 18px; 
+	min-height : 300px;				
+	height : auto;
 }
 
 td#display li.content img {
@@ -176,3 +178,105 @@ div.footer p {
 	color : #333;	
 }
 
+div.comment.panel, div.ref.panel {
+	border-width : 1px;	
+	font-size : 13px;
+}
+
+
+div.comment.panel div.reply {
+	float : right;
+	margin : 5px;
+}
+
+div.comment.panel {
+	margin-top : 10px;
+}
+
+div.comment_title {
+	background : #ccc;
+	padding : 5px;
+}
+
+span.comment_date {
+	float : right;
+}
+
+span.ref_date {
+	float : right;
+}
+
+div.comment_content {
+	padding : 10px;
+	padding-bottom : 0px;
+}
+
+div.ref.panel {
+	margin : 5px;
+	margin-bottom : 0px;
+}
+
+div.ref.panel div.ref_title {
+	background : #ccc;
+	padding : 5px;
+}
+
+div.ref.panel div.ref_content {
+	padding : 10px;
+}
+
+div#comment {
+	float : right;
+	font-size : 13px;
+}
+
+div#comment button {
+	margin-left : 5px;
+}
+
+div#comment_box {
+	margin-top : 5px;
+}
+
+div.reply_box textarea {
+	width : 100%;
+	padding : 0px;
+}
+
+div.reply_box input {
+	width : 100%;
+	padding : 3px 0px 3px;
+}
+
+div#comment_box textarea {
+	width : 100%;
+	padding : 0px;
+}
+
+div#comment_box input {
+	width : 100%;
+	padding : 3px 0px 3px;
+}
+
+div#comment_box span {
+	float : right;
+}
+
+div.reply_box span {
+	float : right;
+}
+
+div#comment_box button {
+	margin-left : 5px;
+	margin-top : 5px;
+}
+
+div.reply_box button {
+	margin-left : 5px;
+	margin-top : 5px;
+}
+
+div.reply_box {
+	margin : 10px;
+	margin-top : 0px;
+}

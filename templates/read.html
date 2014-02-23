@@ -12,16 +12,54 @@
 	{% for t in distribute.tags.all %}
 	<span class="tag">{{ t.tagname }}</span>
 	{% endfor %}
-	<span class="count">{{ distribute.counter }} 人浏览 | 发表于 {{ distribute.date|date:"Y-m-d H:i:s"}} </span></li>
+	<span class="count">{{ distribute.counter }} 人浏览 | 发表于 {{ distribute.date|date:"Y-m-d H:i:s" }} </span></li>
 	<li class="content">
 	{% autoescape off %}
 	{{ distribute.content }}
 	{% endautoescape %}
 	</li>
+	<div id="comment"><button id="comment_box_show" type="button" class="btn primary">回复</button></div>
+	<div class="clear both"></div>
+	<div id="comment_box">
+		<form action="" method="post">
+			{% csrf_token %}
+			<div><input type="text" class="text default" value="{{ username }}" name="username"></div>
+			<textarea class="textarea default" id="comment_content"rows="5" name="content"></textarea>
+			<div><span><a href="" class="btn default comment_cancel">取消</a><button type="submit" class="btn danger" name="submit" value="comment">发布</button></span></div>
+		</form>
+	</div>
+	<div class="clear both"></div>
+	<li class="comment">
+	{% for c in comments %}
+	<div class="comment panel">
+		<div class="comment_title"><span class="comment_user">{{ c.user.username }}</span><span class="comment_date">{{ c.date|date:"Y-m-d H:i:s" }}</span></div>
+		{% if c.ref %}
+		<div class="ref panel">
+			<div class="ref_title"><span class="ref_user">{{ c.ref.user.username }}</span><span class="ref_date">{{ c.ref.date|date:"Y-m-d H:i:s" }}</span></div>
+			<div class="ref_content">{{ c.ref.content }}</div>
+		</div>
+		{% endif %}
+		<div class="comment_content">{{ c.content }}</div>
+		<div class="reply"><a href="" class="reply">评论此回复</a></div>
+		<div class="clear both"></div>
+		<div class="reply_box panel">
+			<form action="" method="post">
+				{% csrf_token %}
+				<div><input type="text" class="text default" value="{{ username }}" name="username"></div>
+				<textarea class="textarea default" id="comment_content"rows="5" name="content"></textarea>
+				<input type="hidden" value="{{ c.id }}" name="ref">
+				<div><span><a href="" class="btn default reply_cancel">取消</a><button type="submit" class="btn danger" name="submit" value="reply">评论</button></span></div>
+				<div class="clear both"></div>
+			</form>
+		</div>
+	</div>
+	{% endfor %}
+	</li>
 </ul>
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="/static/js/edit.js"></script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
 <script src="/static/kindeditor/kindeditor-all.js" type="text/javascript" charset="utf-8"></script> 
 <script charset="utf-8" src="/static/kindeditor/lang/zh_CN.js"></script>
 <script charset="utf-8" src="/static/kindeditor/plugins/code/prettify.js"></script>
@@ -45,6 +83,61 @@
 		prettyPrint();
 	}); 
 </script>
+<script>
+	$(document).ready(function(){
+		$("div#comment_box").css("display", "none");	
+		$("div.reply_box").css("display", "none");	
 
+		$("div#comment button#comment_box_show").click(function(){
+			if($(this).text() == "回复"){
+				$("div#comment_box").slideDown();
+				$(".reply_box").slideUp();
+				$("a.reply").text("评论此回复");
+				$(this).text("收起");
+				$(this).removeClass("primary");
+				$(this).addClass("success");
+			}
+
+			else{
+				$("div#comment_box").slideUp();	
+				$(this).text("回复");
+				$(this).removeClass("success");
+				$(this).addClass("primary");
+			}
+		})
+
+		$("a.reply_cancel").click(function(){
+			$(".reply_box").slideUp();
+			$("a.reply").text("评论此回复");
+			return false;
+		})
+
+		$("a.comment_cancel").click(function(){
+			$("div#comment_box").slideUp();
+			$("div#comment button#comment_box_show").text("回复");
+			$("div#comment button#comment_box_show").removeClass("success");
+			$("div#comment button#comment_box_show").addClass("primary");
+			return false;
+		})
+
+		$("a.reply").click(function(){
+			if($(this).text() == "评论此回复"){
+				$(".reply_box").slideUp();
+				$("div#comment button#comment_box_show").text("回复");
+				$("div#comment button#comment_box_show").removeClass("success");
+				$("div#comment button#comment_box_show").addClass("primary");
+				$("div#comment_box").slideUp();
+				$("a.reply").text("评论此回复");
+				$(this).parent().next().next().slideDown();	
+				$(this).text("收起");
+			}	
+			else{
+				$(this).parent().next().next().slideUp();	
+				$(this).text("评论此回复");
+			}	
+			return false;
+		})
+	})
+</script>
 {% endblock %}
 

@@ -8,6 +8,12 @@
 {{ motto.content }}
 {% endblock %}
 
+{% block record %}
+{% for r in records %}
+<div><a href="{{ r.url }}">{{ r.title }}</a></div>
+{% endfor %}
+{% endblock %}
+
 {% block tag %}
 {% for t in tags %}
 <a href="{{ t.url }}" class="tag">{{ t.tagname }}</a>
@@ -16,13 +22,13 @@
 
 {% block activity %}
 {% for a in activitys %}
-<div>{{ a.user }} {{ a.action }} <a href="">{{ a.distribute.title }}</a></div>
+<div>{{ a.user }} {{ a.action }} <a href="{{ a.distribute.read }}">{{ a.distribute.title }}</a></div>
 {% endfor %}
 {% endblock %}
 
 {% block display %}
 <ul>
-	<li class="title">全部博文</li>
+	<li class="title">{{ title }}</li>
 	<li class="content">
 	{% for d in distributes %}
 	<div class="blog"><a href="{{ d.read }}">{{ d.title }}</a>
