@@ -142,3 +142,12 @@ div.footer {
 div.footer p {
 	color : #333;	
 }
+
+#paginator {
+	text-align : center;
+}
+
+select {
+	font-size : 15px;
+	padding : 3px;
+}

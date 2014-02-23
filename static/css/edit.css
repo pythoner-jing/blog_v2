@@ -172,19 +172,6 @@ td#display li.editbox div.prompt {
 	border-width : 0px;
 }
 
-textarea {
-	width : 98%;
-	margin : auto;
-	font-size : 14px;
-	border : 1px #666 solid;
-}
-
-input[type=checkbox], .checkbox {
-	float : left;
-	font-size : 13px;
-	line-height : 20px;
-}
-
 span.checkbox {
 	margin : 5px;
 }
@@ -224,3 +211,15 @@ div.footer {
 div.footer p {
 	color : #333;	
 }
+
+textarea {
+	width : 98%;
+	margin : auto;
+	font-size : 14px;
+	border : 1px #666 solid;
+}
+
+input[type=checkbox], .checkbox {
+	float : left;
+	font-size : 13px;
+	line-height : 20px;

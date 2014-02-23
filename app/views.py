@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response, RequestContext, HttpResponseRed
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import user_passes_test 
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from models import *
 
@@ -56,7 +57,19 @@ def index(request):
 	records = Record.objects.all()
 	records = record_add_link(records)
 
-	return render_to_response("index.html", {"title" : "全部博文", "records" : records, "user" : request.user, "tags" : tags, "activitys" : activitys, "distributes" : distributes, "motto" : motto})
+	p = Paginator(distributes, 10)
+
+	try:
+		page_num = int(request.GET.get("page", "1"))
+	except ValueError:
+		page_num = 1
+
+	try:
+		page = p.page(page_num)
+	except (EmptyPage, InvalidPage):
+		page = p.page(p.num_pages)
+
+	return render_to_response("index.html", {"p" : p, "page" : page, "title" : "全部博文", "records" : records, "user" : request.user, "tags" : tags, "activitys" : activitys, "distributes" : page.object_list, "motto" : motto})
 
 def read(request, title):
 	tags = Tag.objects.all()

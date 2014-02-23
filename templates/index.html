@@ -42,4 +42,32 @@
 	{% endfor %}
 	</li>
 </ul>
+<div id="paginator">
+	<span>
+		<a href="?page=1" class="btn success">首页</a>
+		{% if page.has_previous %}
+		<a href="?page={{ page.previous_page_number }}" class="btn default">上一页</a>
+		{% endif %}
+		<select id="page" name="page">
+			{% for i in p.page_range %}
+			<option value="{{ i }}">第 {{ i }} 页</option>
+			{% endfor %}
+		</select>
+		{% if page.has_next %}
+		<a href="?page={{ page.next_page_number }}" class="btn default">下一页</a>
+		{% endif %}
+		<a href="?page={{ p.num_pages }}" class="btn warning">末页</a>
+	</span>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#page").click(function(){
+			window.location.href = "?page=" + $("#page").val();
+		})
+	})	
+</script>
 {% endblock %}
